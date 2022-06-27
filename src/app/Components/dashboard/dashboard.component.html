@@ -1,0 +1,38 @@
+<div style="width:100vw;height:100vh;">
+    <mat-toolbar class="tool">
+        <button class="ic" mat-icon-button><img src="assets\Book.png" alt=""></button>
+        <p class="bo">BooKStore</p>
+        <input class="search" placeholder=" &#xf42c; Search" #search (keyup)="clearFilter(search.value)" >
+        <div fxLayout="column" class="pr">
+            <button class="profileicon" mat-icon-button [matMenuTriggerFor]="menu"><img src="../../../assets/person_outline_white_24dp.svg">
+            </button>
+            <mat-menu #menu="matMenu"  xPosition="before">
+                <p ><strong class="align">Welcome</strong></p>
+                 <p class="align">Access Your Account</p>
+                <div class="align" fxLayout="row">
+                    <img src="../../../assets/person_outline_black_18dp.svg">
+                    <button mat-menu-item>Profile</button>
+                </div>
+                <div class="align" fxLayout="row">
+                    <img src="../../../assets/markunread_mailbox_black_18dp.svg">
+                    <button mat-menu-item>My Order</button>
+                </div>
+                <div class="align" fxLayout="row">
+                    <img src="../../../assets/favorite_border_black_18dp.svg">
+                    <button mat-menu-item>WishList</button>
+                </div>
+                <div class="align" fxLayout="row" fxLayout="center">               
+                    <button routerLink="/login" class="btnlog"  (click)="Logout()">Login/Signup</button>
+                </div>
+            </mat-menu>
+            <p class="text">profile</p>
+        </div>
+        <div fxLayout="column" class="car">
+            <button class="profileicon" (click)="getcart()" mat-icon-button><img src="../../../assets/shopping_cart_white_24dp.svg">
+            </button>
+            <p class="text">profile</p>
+        </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    </div>
+    
