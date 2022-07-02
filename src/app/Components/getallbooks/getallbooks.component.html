@@ -1,83 +1,53 @@
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayout.sm="row" fxLayout.xs="row">
+<div style="width: 100%; padding-left: 100px;padding-right:210px; " fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+            <span class="books">Books <p id="book-count">({{booksArray?.length}} items)</p></span>
+        </div>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Sort by relevance</mat-label>
+                <mat-select class="matselect">
+                    <mat-option (click)="lowtohigh()" value="one">Price:Low to High</mat-option>
+                    <mat-option (click)=" hightolow()" value="two">Price:High to Low</mat-option>
+                    <mat-option (click)="newestarrivals()" value="third">Newest Arrivals</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="main" fxLayout="row" fxLayoutGap="22px" fxLayout="row wrap" fxFlex>
+        <div *ngFor="let Book of booksArray" style="margin-bottom: 30px;width: 270px;" fxLayout="row"
+            fxLayout="row wrap">
+            <mat-card style="margin-bottom: 40px;">
+                <div class="maindiv">
+                    <div class="bookimg" fxLayout="row " fxLayoutAlign="center center">
+                        <img class="img1" [src]="Book.image" alt="book img" (click)="quickview(Book)">
+                    </div>
+                    <div >
+                        <h2 class="title">{{Book.bookName}}</h2>
+                        <p id="para">by {{Book.authorName}}</p>
 
-    <div class="bookandCount">
-        <span class="books">Books</span>
-        <span class="count"></span>
-        <!--we are just binding data using string interpolation between getallbooks.html and getaalbooks.ts -->
-    </div>
-  
-    <div class="sortbyrelevance">
-        <mat-form-field appearance="outline">
-            <mat-label>Sort by relevance</mat-label>
-            <mat-select class="matselect">
-                <mat-option style="color: #a03037;" (click)="lowtohigh()" value="one">Price:Low to High</mat-option>
-                <mat-option style="color: #a03037;" (click)=" hightolow()" value="two">Price:High to Low</mat-option>
-                <mat-option style="color: #a03037;" (click)="newestarrivals()" value="third">Newest Arrivals</mat-option>
-            </mat-select>
-        </mat-form-field>
-    </div>
-  
-  </div>
-  
-  <div fxLayoutAlign="center center" fxLayout="row wrap" fxLayoutGap="15px">
-    <div class="entirebook"
-    *ngFor=""
-        fxLayout.sm="column">
-  
-        <div class="bookimg">
-            <!-- this (book) is coming from ngFor (let book) as we are storing aur bookname, author etc in book -->
-            <img class="img1" src="../../../assets/Image 11@2x.png" alt="">
-        </div>
-  
-        <div class="bookname">
-            <!-- {{book.bookName}} -->
-        </div>
-        <div class="author">
-            <!-- by {{book.authorName}} -->
-        </div>
-        <div class="rating" fxLayoutAlign="space-evenly center">
-            4.5<img class="Star" src="../../../assets/star_outline_white_24dp.svg" alt="">
-        </div>
-  
-        <div class="quantity">
-            <!-- ({{book.bookCount}}) -->
-        </div>
-  
-        <div class="price" fxLayout="row">
-            <div class="discountprice">
-                <!-- Rs.{{book.discountPrice}} -->
-            </div>
-            <div class="originalprice">
-                <!-- <del> Rs.{{book.originalPrice}} </del> <del> tag is used to show the removal from document -->
-            </div>
-        </div>
-  
-        <div class="cartandwishlistbutton" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-evenly center">
-            
-                <div >
-  
-                    <button class="addtobag"  >
-                        <img class="cartimg" src="../../../assets/shopping_cart_black_24dp.svg" alt="">
-                    </button>
+                        <div class="ra" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign=" center">
+                            <div class="rating" fxLayout="row" fxLayoutAlign="center center">{{Book.rating}}<img class="Star"
+                                    src="./../../../assets/star_FILL0_wght400_GRAD0_opsz40.svg" alt=""></div>
+                            <div>
+                                <p id="count">{{Book.reviewCount}}</p>
+                            </div>
+
+                        </div>
+
+                        <div class="price-container" fxLayout="row">
+
+                            <div class="dicounted-price">
+                                Rs.{{Book.discountPrice}}
+                            </div>
+                            <div class="actual-price">
+                                <del> Rs.{{Book.originalPrice}}</del>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-            <div  fxLayout="row" fxLayoutAlign="start center">
-                <button mat-raised-button class="addedtobag">
-                    ADDED TO BAG
-                </button>
-            </div>
-  
-                <div  fxLayout="row" fxLayoutAlign="start center">
-  
-                    <button class="wishlist" >
-                        <mat-icon class="wishlistIcon">favorite</mat-icon>
-                    </button>
-                </div>
+            </mat-card>
         </div>
-  
     </div>
-  
-  </div>
-  <div class="pagination" fxLayoutAlign="center center">
-    <!-- <pagination-controls class="text-center my-pagination" (pageChange)="page = $event" ></pagination-controls> -->
-  </div>
+
+</div>

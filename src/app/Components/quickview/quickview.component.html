@@ -1,0 +1,120 @@
+<div style="width: 100%; padding-left: 100px;padding-right:210px;margin-bottom: 200px; " fxLayout="column">
+    <div fxLayout="column">
+
+        <div>
+            <span style="color:gray; cursor: pointer;" routerLink="/dashboard/getallbooks">Home/</span><span> Books()
+            </span>
+        </div>
+        <div style="margin-top: 50px;" fxLayout="row ">
+            <div fxLayout="row " fxLayoutAlign="center start">
+                <div class="bookimg2" fxLayout="row " fxLayoutAlign="center center">
+                    <img class="img2"[src]="booksArray.image" alt="book img">
+                </div>
+                <div>
+                    <div class="bookimg1" fxLayout="row " fxLayoutAlign="center center">
+                        <img class="img1" [src]="booksArray.image"  alt="book img">
+
+                    </div>
+                    <div fxLayout="row " fxLayoutAlign="space-between" style="margin-top: 30px;">
+                        <button class="butt" fxLayout="row " fxLayoutAlign="center center">ADD TO BAG</button>
+                        <button class="butt1" fxLayout="row " fxLayoutAlign="center center">
+                            <mat-icon id="fav-icons">favorite</mat-icon>
+                            WHISH LIST
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-left: 40px; ">
+                <div fxLayout="column">
+                    <div fxLayout="column">
+                        <div>
+                            <h2 class="title">{{booksArray.bookName}}</h2>
+                        </div>
+                        <div>
+                            <p class="auth" id="para">{{booksArray.authorName}}</p>
+                        </div>
+
+                        <div class="ra" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign=" center">
+                            <div class="rating" fxLayout="row" fxLayoutAlign="center center">{{booksArray.rating}}<img class="Star"
+                                    src="./../../../assets/430117_star_icon.png" alt=""></div>
+                            <div>
+                                <p id="count">{{booksArray.reviewCount}}</p>
+                            </div>
+
+                        </div>
+
+                        <div class="price-container" fxLayout="row" fxLayoutGap="20px">
+
+                            <div class="dicounted-price">
+                                Rs.{{booksArray.discountPrice}}
+                            </div>
+                            <div class="actual-price">
+                                Rs.{{booksArray.originalPrice}}
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr style=" width: 100%; margin-top: 30px;">
+                    <div style="margin-top: 30px;">
+                        <li style="font-size: 18px;font-weight: bold;">Book Detail</li>
+                        <ul style="margin-left: -15px; word-spacing:5px"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut<br> labore
+                            et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris<br> nisi ut aliquip ex ea commodo
+                            consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit<br> esse cillum dolore eu fugiat nulla
+                            pariatur.
+                            Excepteur sint occaecat cupidatat non proident,<br> sunt in culpa qui officia deserunt mollit anim id
+                            est laborum.</ul>
+                    </div>
+                    <hr style=" width: 100%; margin-top: 30px;">
+                    <div style="margin-top: 30px;">
+                        <span style="font-size: 20px;">Customer Feedback</span>
+                        <mat-card
+                            style="padding:20px;margin-top: 20px; background-color:rgb(242, 242, 255);height: 150px;border-radius: 5px;">
+                            <span>Overall rating</span>
+                            <div>
+                                <div class="rate">
+
+                                    <input type="radio" id="star5" name="rate" [(ngModel)]="rating" value="5" />
+                                    <label for="star5" title="Extremely Good">5 stars</label>
+                                    <input type="radio" id="star4" name="rate" [(ngModel)]="rating" value="4" />
+                                    <label for="star4" title="Very Good">4 stars</label>
+                                    <input type="radio" id="star3" name="rate" [(ngModel)]="rating" value="3" />
+                                    <label for="star3" title="Good">3 stars</label>
+                                    <input type="radio" id="star2" name="rate" [(ngModel)]="rating" value="2" />
+                                    <label for="star2" title="Not Bad">2 stars</label>
+                                    <input type="radio" id="star1" name="rate" [(ngModel)]="rating" value="1" />
+                                    <label for="star1" title="Bad">1 star</label>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <input style="width:100%;height:40px;border-radius: 5px;" placeholder="Enter your review" [(ngModel)]="comments">
+                              
+                            </div>
+                           
+                            <div fxLayoutAlign="end center">
+                             <button (click)="addFeedback()"
+                             style="width:80px;border-radius: 5px;height: 30px;background-color: rgb(105, 105, 201);">Submit</button>
+                            </div>
+                        </mat-card>
+                        <mat-card style="margin-top: 40px; border: none;" fxLayout="column">
+                            <div fxLayoutGap="20px" *ngFor="let feedback of booksArr" style="margin-left: 20px;">
+                                <div>
+                                    <span class="user-feedback"> {{(feedback?.fullName)}}</span>
+                                </div>
+                                <div style="font-size: 28px;color: orange;padding-top: 10px;">
+                                    <ngb-rating [(rate)]="gfg"></ngb-rating> 
+                                    <!-- <ngb-rating [max]="5" [(rate)]="feedback.rating" [readonly]="true"></ngb-rating> -->
+                                    <!-- {{feedback?.rating}} -->
+                                </div>
+                                <div style="padding-top: 10px">
+                                    <span class="user-comment"> {{feedback?.comments}}</span>
+                                </div>
+                            </div>
+                        </mat-card>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

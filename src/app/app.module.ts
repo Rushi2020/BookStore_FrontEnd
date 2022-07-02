@@ -24,6 +24,8 @@ import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassw
 import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetallbooksComponent } from './Components/getallbooks/getallbooks.component';
+import { QuickviewComponent } from './Components/quickview/quickview.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { SignupComponent } from './Components/signup/signup.component';
 
 @NgModule({
@@ -35,6 +37,7 @@ import { GetallbooksComponent } from './Components/getallbooks/getallbooks.compo
     ResetpasswordComponent,
     DashboardComponent,
     GetallbooksComponent,
+    QuickviewComponent,
     // SignupComponent
   ],
   imports: [
@@ -52,7 +55,7 @@ import { GetallbooksComponent } from './Components/getallbooks/getallbooks.compo
     MatTabsModule,
     MatIconModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,NgbModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

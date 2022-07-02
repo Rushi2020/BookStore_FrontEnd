@@ -17,4 +17,13 @@ export class HttpService {
    putService(url:string, payload:any , token:boolean=true, httpOptions:any){
     return this.http.put(url, payload, token && httpOptions )
    }
+
+   
+  //  getService(url:any,token:boolean=true,httpOptions:any){
+  //   return this.http.get(url,token && httpOptions)
+  // }
+  getService(url:string='', tokenRequired:boolean=false, httpOptions:any={} )
+  {
+    return this.http.get(url,tokenRequired && httpOptions)
+  }
 }

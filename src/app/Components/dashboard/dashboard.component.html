@@ -1,7 +1,7 @@
 <div style="width:100vw;height:100vh;">
     <mat-toolbar class="tool">
         <button class="ic" mat-icon-button><img src="assets\Book.png" alt=""></button>
-        <p class="bo">BooKStore</p>
+        <p routerLink="/getallbooks" class="bo">BooKStore</p>
         <input class="search" placeholder=" &#xf42c; Search" #search (keyup)="clearFilter(search.value)" >
         <div fxLayout="column" class="pr">
             <button class="profileicon" mat-icon-button [matMenuTriggerFor]="menu"><img src="../../../assets/person_outline_white_24dp.svg">
