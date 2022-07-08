@@ -11,6 +11,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatRadioModule} from '@angular/material/radio';
 // import {flexLayoutModule} 
 import {MatIconModule} from '@angular/material/icon';
  import { FlexLayoutModule } from '@angular/flex-layout';
@@ -26,6 +27,12 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetallbooksComponent } from './Components/getallbooks/getallbooks.component';
 import { QuickviewComponent } from './Components/quickview/quickview.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MycartComponent } from './Components/mycart/mycart.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import { OrderlistComponent } from './Components/orderlist/orderlist.component';
+import { OrdersuccessComponent } from './Components/ordersuccess/ordersuccess.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 // import { SignupComponent } from './Components/signup/signup.component';
 
 @NgModule({
@@ -38,10 +45,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DashboardComponent,
     GetallbooksComponent,
     QuickviewComponent,
+    MycartComponent,
+    WishlistComponent,
+    OrderlistComponent,
+    OrdersuccessComponent,
     // SignupComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     MatToolbarModule,
     AppRoutingModule,
     MatInputModule,
@@ -53,9 +64,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatCardModule,
     MatFormFieldModule,
     MatTabsModule,
-    MatIconModule,
-    MatSelectModule,
-    HttpClientModule,NgbModule 
+    MatIconModule,MatSnackBarModule,
+    MatSelectModule,MatRadioModule,
+    HttpClientModule,NgbModule ,
+    // ActivatedRoute
   ],
   providers: [],
   bootstrap: [AppComponent]

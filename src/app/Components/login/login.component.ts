@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         localStorage.setItem('token',res.message)
       })
+      this.route.navigateByUrl('/dashboard/getallbooks')
   }
   else
   {

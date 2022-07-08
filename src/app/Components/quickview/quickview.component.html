@@ -16,8 +16,18 @@
 
                     </div>
                     <div fxLayout="row " fxLayoutAlign="space-between" style="margin-top: 30px;">
-                        <button class="butt" fxLayout="row " fxLayoutAlign="center center">ADD TO BAG</button>
-                        <button class="butt1" fxLayout="row " fxLayoutAlign="center center">
+                        <button class="butt" fxLayout="row " fxLayoutAlign="center center" *ngIf="!show"
+                            (click)=" hideAndShow()">ADD TO BAG</button>
+                        <mat-card class="wrapper" fxLayout="row" fxLayoutAlign="center center" *ngIf="show">
+                            <button class="plusminus"><img class="img5" src="./../../../assets/do_not_disturb_on_FILL0_wght400_GRAD0_opsz40.svg"
+                                    alt=""></button>
+                            <input class="num" [(ngModel)]=" orderQuantity" />
+                            <button class="plusminus"><img class="img5"
+                                    src="./../../../assets/add_circle_FILL0_wght400_GRAD0_opsz40.svg" alt=""
+                                    (click)=" addToBag()"></button>
+
+                        </mat-card>
+                        <button class="butt1" fxLayout="row " fxLayoutAlign="center center" (click)="addToWishList()">
                             <mat-icon id="fav-icons">favorite</mat-icon>
                             WHISH LIST
                         </button>

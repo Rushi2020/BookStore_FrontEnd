@@ -1,4 +1,5 @@
 import { Component, OnInit, VERSION } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { BookService } from 'src/app/Services/Book service/book.service';
 
 @Component({
@@ -15,10 +16,15 @@ export class QuickviewComponent implements OnInit {
  rating:any;
  overallRating:any;
  gfg=5;
+ orderQuantity= 1;
+ Bookcount:any;
+ value = 0;
+ values=1;
+ show:any;
 
 
 
-  constructor(private bookservice:BookService) { }
+  constructor(private bookservice:BookService, private snack:MatSnackBar) { }
 
   ngOnInit(): void {
     this.bookId = localStorage.getItem('bookId',)
@@ -33,6 +39,9 @@ export class QuickviewComponent implements OnInit {
       console.log(response);
       this.booksArray = response.response;
       console.log(this.booksArray);
+      this.snack.open('get  book  Successfull', '', {
+        duration: 3000,
+      })
     });
   }
 
@@ -47,6 +56,9 @@ export class QuickviewComponent implements OnInit {
       (response: any) => {
         console.log('User Feedback', response);
         this.getFeedback();
+        this.snack.open('Add feedback  Successfull', '', {
+          duration: 3000,
+        })
       },
       (error: any) => {
         console.log(error);
@@ -60,7 +72,58 @@ export class QuickviewComponent implements OnInit {
       console.log('User Feedback', response);
       this.booksArr = response.response;
         console.log(this.booksArr);
+        this.snack.open('Get Feedback Successfull', '', {
+          duration: 3000,
+        })
     });
   }
 
+
+  addToBag() {
+    let data = {
+      bookId: this.bookId,
+      orderQuantity:this.orderQuantity
+    }
+    this.bookservice.addToBag(data).subscribe(
+      (response: any) => {
+        console.log('Add to cart', response);
+        this.snack.open('add to bag Successfull', '', {
+          duration: 3000,
+        })
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
+  }
+
+  addToWishList() {
+    let data = {
+      bookId: this.bookId,
+    }
+    this.bookservice.addwishlist(data).subscribe(
+      (response: any) => {
+        console.log('Add to wishlist', response);
+        this.snack.open('Add Wishlist Successfull', '', {
+          duration: 3000,
+        })
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
+  }
+
+
+
+  handleMinus() {
+    this.value--;  
+  }
+  handlePlus() {
+    this.value++;    
+  }
+  hideAndShow(){
+    console.log("calling hide")
+    this.show=!this.show
+  }
 }

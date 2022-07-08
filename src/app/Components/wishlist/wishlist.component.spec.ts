@@ -1,23 +1,22 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { QuickviewComponent } from './quickview.component';
+import { WishlistComponent } from './wishlist.component';
 
-describe('QuickviewComponent', () => {
-  let component: QuickviewComponent;
-  let fixture: ComponentFixture<QuickviewComponent>;
+describe('WishlistComponent', () => {
+  let component: WishlistComponent;
+  let fixture: ComponentFixture<WishlistComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule,MatSnackBarModule],
-      declarations: [ QuickviewComponent ]
+      imports:[HttpClientModule],
+      declarations: [ WishlistComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QuickviewComponent);
+    fixture = TestBed.createComponent(WishlistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

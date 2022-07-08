@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from 'src/app/Services/Book service/book.service';
 import { DataService } from 'src/app/Services/data service/data.service';
@@ -16,7 +17,7 @@ export class GetallbooksComponent implements OnInit {
   // bookId:any;
 
 
-  constructor(private router:Router,private bookservice:BookService) { }
+  constructor(private router:Router,private bookservice:BookService,private snack :MatSnackBar) { }
 
   ngOnInit(): void {
     this.getAllBook()
@@ -28,6 +29,9 @@ export class GetallbooksComponent implements OnInit {
       this.booksArray = response.response;
       this.booksArray.reverse();
       console.log(this.booksArray);
+      this.snack.open('get All  book  Successfull', '', {
+        duration: 3000,
+      })
     });
   }
 

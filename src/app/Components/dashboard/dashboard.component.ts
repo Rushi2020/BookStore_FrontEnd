@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
   }
   getcart()
   {
-    this.route.navigateByUrl("/dashboard/getcart")
+    this.route.navigateByUrl("/dashboard/mycart")
   }
 
 }

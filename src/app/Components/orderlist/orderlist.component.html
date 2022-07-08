@@ -1,0 +1,41 @@
+<div>
+    <div style="width: 100%; padding-left: 200px;padding-right:240px;margin-bottom: 130px; " fxLayout="column">
+
+        <div style="margin-bottom: 40px;">
+            <span style="color:gray; cursor: pointer;" routerLink="/dashboard/getallbooks">Home/</span><span>
+                Order({{orderArray?.length}})
+            </span>
+        </div>
+        <mat-card style="max-width: 1000px;padding: 60px;border: 2px solid gray;" *ngFor="let order of orderArray">
+            <div fxLayout="row"
+            fxLayoutAlign="space-between">
+                <div>
+
+                    <div fxLayout="row">
+                        <div><img style="width:100px;" [src]="order.getOrderBook.image" alt=""></div>
+                        <div style="margin-left: 40px;margin-top: 5px;">
+                            <h2 class="title">{{order.getOrderBook.bookName}}</h2>
+                            <p id="para">by {{order.getOrderBook.authorName}} </p>
+
+
+                            <div class="price-container" fxLayout="row">
+
+                                <!-- <div class="dicounted-price">
+                                    Total Book:{{order.getOrderBook.book}}
+                                </div> -->
+                                <div class="actual-price">
+                                    Total price: {{order.getOrderBook.discountPrice}}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+                    <h2 style="font-size: 18px;"><img  src="./../../../assets/download.png" style="width: 20px;height:20px;border-radius: 100%;"> Placed order on {{order.order_Date}}</h2>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

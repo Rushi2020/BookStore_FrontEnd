@@ -21,7 +21,6 @@ export class SignupComponent implements OnInit {
       password: ['', Validators.required],
       mobileNumber: ['', Validators.required],
       // selectoption: ['', Validators.required],
-      
     })
   }
 
@@ -43,8 +42,5 @@ export class SignupComponent implements OnInit {
  else{
   console.log("Invalid data", this.signupForm.value);
  }
-  
 }
- 
-
 }
