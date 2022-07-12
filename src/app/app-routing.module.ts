@@ -13,6 +13,7 @@ import { WishlistComponent } from './Components/wishlist/wishlist.component';
 import { OrdersuccessComponent } from './Components/ordersuccess/ordersuccess.component';
 
 const routes: Routes = [
+ { path:'', redirectTo:"/login", pathMatch:'full'},
 {path:'login',component:LoginComponent },
 {path: 'signup',component:SignupComponent},
 {path: 'forgotpassword' , component:ForgotpasswordComponent},

@@ -77,48 +77,154 @@
                             est laborum.</ul>
                     </div>
                     <hr style=" width: 100%; margin-top: 30px;">
-                    <div style="margin-top: 30px;">
-                        <span style="font-size: 20px;">Customer Feedback</span>
-                        <mat-card
-                            style="padding:20px;margin-top: 20px; background-color:rgb(242, 242, 255);height: 150px;border-radius: 5px;">
-                            <span>Overall rating</span>
-                            <div>
+                    <!-- <div style="margin-top: 30px;"> -->
+                        <!-- <span style="font-size: 20px;">Customer Feedback</span> -->
+                        <!-- <mat-card -->
+                             <!-- style="padding:20px;margin-top: 20px; background-color:rgb(242, 242, 255);height: 150px;border-radius: 5px;">  -->
+                            <!-- <span>Overall rating</span> -->
+                            <!-- <div>
                                 <div class="rate">
 
-                                    <input type="radio" id="star5" name="rate" [(ngModel)]="rating" value="5" />
-                                    <label for="star5" title="Extremely Good">5 stars</label>
-                                    <input type="radio" id="star4" name="rate" [(ngModel)]="rating" value="4" />
-                                    <label for="star4" title="Very Good">4 stars</label>
-                                    <input type="radio" id="star3" name="rate" [(ngModel)]="rating" value="3" />
-                                    <label for="star3" title="Good">3 stars</label>
-                                    <input type="radio" id="star2" name="rate" [(ngModel)]="rating" value="2" />
-                                    <label for="star2" title="Not Bad">2 stars</label>
-                                    <input type="radio" id="star1" name="rate" [(ngModel)]="rating" value="1" />
-                                    <label for="star1" title="Bad">1 star</label>
+                                    <img src="../../../assets/star-gray.svg" width="22px" for="rate-1" *ngIf="rating<1">
+                                    <img src="/src/assets/star-yellow.svg" width="22px" for="rate-1" *ngIf="rating>=1">
+                                    <img src="/src/assets/star-gray.svg" width="22px" for="rate-2" *ngIf="rating<2">
+                                    <img src="/src/assets/star-yellow.svg" width="22px" for="rate-2" *ngIf="rating>=2">
+                                    <img src="/src/assets/star-gray.svg" width="22px" for="rate-3" *ngIf="rating<3">
+                                    <img src="/src/assets/star-yellow.svg" width="22px" for="rate-3" *ngIf="rating>=3">
+                                    <img src="/src/assets/star-gray.svg" width="22px" for="rate-4" *ngIf="rating<4">
+                                    <img src="/src/assets/star-yellow.svg" width="22px" for="rate-4" *ngIf="rating>=4">
+                                    <img src="/src/assets/star-gray.svg" width="22px" for="rate-5" *ngIf="rating<5">
+                                    <img src="/src/assets/star-yellow.svg" width="22px" for="rate-5" *ngIf="rating>=5">
                                 </div>
                             </div>
                             <div style="margin-bottom: 20px;">
                                 <input style="width:100%;height:40px;border-radius: 5px;" placeholder="Enter your review" [(ngModel)]="comments">
                               
-                            </div>
+                            </div> -->
+
+                            <!-- <h3 style="margin-top: 10px; margin-bottom: 10px">Customer Feedback</h3>
+                            <div (click)="addFeedback()" fxLayout="column" style="padding: 20px 30px 20px 20px; background: #e6e6e6; width: 100%; border-radius: 5px;">
+                                
+                                <h4>Overall rating</h4> 
+                                <div class="starContainer">
+                                    <input type="radio" name="rate" id="rate-1" [(ngModel)]="rating" value="1">
+                                    <label for="rate-1"><img src="../../../assets/star-gray.svg" width="22px" for="rate-1" *ngIf="rating<1"></label>
+                                    <label for="rate-1"><img src="../../../assets/star-yellow.svg" width="22px" for="rate-1" *ngIf="rating>=1"></label>
+                                    
+                                    <input type="radio" name="rate" id="rate-2" [(ngModel)]="rating" value="2">
+                                    <label for="rate-2"><img src="../../../assets/star-gray.svg" width="22px" for="rate-2" *ngIf="rating<2"></label>
+                                    <label for="rate-2"><img src="/assets/star-yellow.svg" width="22px" for="rate-2" *ngIf="rating>=2"></label>
+                
+                                    <input type="radio" name="rate" id="rate-3" [(ngModel)]="rating" value="3">
+                                    <label for="rate-3"><img src="../../../assets/star-gray.svg" width="22px" for="rate-3" *ngIf="rating<3"></label>
+                                    <label for="rate-3"><img src="/assets/star-yellow.svg" width="22px" for="rate-3" *ngIf="rating>=3"></label>
+                
+                                    <input type="radio" name="rate" id="rate-4" [(ngModel)]="rating" value="4">
+                                    <label for="rate-4"><img src="../../../assets/star-gray.svg" width="22px" for="rate-4" *ngIf="rating<4"></label>
+                                    <label for="rate-4"><img src="/assets/star-yellow.svg" width="22px" for="rate-4" *ngIf="rating>=4"></label>
+                
+                                    <input type="radio" name="rate" id="rate-5" [(ngModel)]="rating" value="5">
+                                    <label for="rate-5"><img src="../../../assets/star-gray.svg" width="22px" for="rate-5" *ngIf="rating<5"></label>
+                                    <label for="rate-5"><img src="/assets/star-yellow.svg" width="22px" for="rate-5" *ngIf="rating>=5"></label>
+                                </div>
+                
+                                <textarea type="text" matInput placeholder="Write your review"  [(ngModel)]="comments" style="overflow: hidden; resize: none !important; word-wrap: break-word; 
+                                            padding: 5px; margin: 10px 0px; background: white; border-radius: 2px;" cdkTextareaAutosize cdkAutosizeMinRows="3" cdkAutosizeMaxRows="25" (click)="addFeedback()"></textarea>
+                                <div fxLayoutAlign="end center" style="padding: 5px 0px;">
+                                    <button mat-flat-button color="primary" (click)="addFeedback()">Submit</button>
+                                </div>
+                            </div> -->
                            
-                            <div fxLayoutAlign="end center">
+                            <!-- <div fxLayoutAlign="end center">
                              <button (click)="addFeedback()"
                              style="width:80px;border-radius: 5px;height: 30px;background-color: rgb(105, 105, 201);">Submit</button>
-                            </div>
-                        </mat-card>
-                        <mat-card style="margin-top: 40px; border: none;" fxLayout="column">
+                            </div> -->
+                        <!-- </mat-card> -->
+                        <!-- <mat-card style="margin-top: 40px; border: none;" fxLayout="column">
                             <div fxLayoutGap="20px" *ngFor="let feedback of booksArr" style="margin-left: 20px;">
                                 <div>
                                     <span class="user-feedback"> {{(feedback?.fullName)}}</span>
                                 </div>
                                 <div style="font-size: 28px;color: orange;padding-top: 10px;">
-                                    <ngb-rating [(rate)]="gfg"></ngb-rating> 
-                                    <!-- <ngb-rating [max]="5" [(rate)]="feedback.rating" [readonly]="true"></ngb-rating> -->
-                                    <!-- {{feedback?.rating}} -->
+                                    <ngb-rating [max]="5" [(rate)]="feedback.rating" [readonly]="true"></ngb-rating>
                                 </div>
                                 <div style="padding-top: 10px">
                                     <span class="user-comment"> {{feedback?.comments}}</span>
+                                </div>
+                            </div>
+                        </mat-card> -->
+                    <!-- </div> -->
+                    <h3 style="margin-top: 10px; margin-bottom: 10px">Customer Feedback</h3>
+                    <div (click)="getFeedback()" fxLayout="column" style="padding: 20px 30px 20px 20px; background: #e6e6e6; width: 100%; border-radius: 5px;">
+                        
+                        <h4>Overall rating</h4> 
+                        <div class="starContainer">
+                            <input type="radio" name="rate" id="rate-1" [(ngModel)]="rating" value="1">
+                            <label for="rate-1"><img src="../../../assets/star-gray.svg" width="22px" for="rate-1" *ngIf="rating<1"></label>
+                            <label for="rate-1"><img src="../../../assets/star-yellow.svg" width="22px" for="rate-1" *ngIf="rating>=1"></label>
+                            
+                            <input type="radio" name="rate" id="rate-2" [(ngModel)]="rating" value="2">
+                            <label for="rate-2"><img src="/assets/star-gray.svg" width="22px" for="rate-2" *ngIf="rating<2"></label>
+                            <label for="rate-2"><img src="/assets/star-yellow.svg" width="22px" for="rate-2" *ngIf="rating>=2"></label>
+        
+                            <input type="radio" name="rate" id="rate-3" [(ngModel)]="rating" value="3">
+                            <label for="rate-3"><img src="/assets/star-gray.svg" width="22px" for="rate-3" *ngIf="rating<3"></label>
+                            <label for="rate-3"><img src="/assets/star-yellow.svg" width="22px" for="rate-3" *ngIf="rating>=3"></label>
+        
+                            <input type="radio" name="rate" id="rate-4" [(ngModel)]="rating" value="4">
+                            <label for="rate-4"><img src="/assets/star-gray.svg" width="22px" for="rate-4" *ngIf="rating<4"></label>
+                            <label for="rate-4"><img src="/assets/star-yellow.svg" width="22px" for="rate-4" *ngIf="rating>=4"></label>
+        
+                            <input type="radio" name="rate" id="rate-5" [(ngModel)]="rating" value="5">
+                            <label for="rate-5"><img src="/assets/star-gray.svg" width="22px" for="rate-5" *ngIf="rating<5"></label>
+                            <label for="rate-5"><img src="/assets/star-yellow.svg" width="22px" for="rate-5" *ngIf="rating>=5"></label>
+                        </div>
+        
+                        <textarea type="text" matInput placeholder="Write your review"  [(ngModel)]="comments" style="overflow: hidden; resize: none !important; word-wrap: break-word; 
+                                    padding: 5px; margin: 10px 0px; background: white; border-radius: 2px;"  (click)="getFeedback()"></textarea>
+                        <div fxLayoutAlign="end center" style="padding: 5px 0px;">
+                            <button mat-flat-button color="primary" (click)="addFeedback()">Submit</button>
+                        </div>
+                    </div>
+                        
+                    <div class="feedbackList"  fxLayout="column">
+                        
+                        <!-- <div class="review">
+                            <div>
+                                <img src="/assets/star-gray.svg" width="22px" for="rate-1" *ngIf="feedback.rating<1">
+                                <img src="/assets/star-yellow.svg" width="22px" for="rate-1" *ngIf="feedback.rating>=1">
+                                <img src="/assets/star-gray.svg" width="22px" for="rate-2" *ngIf="feedback.rating<2">
+                                <img src="/assets/star-yellow.svg" width="22px" for="rate-2" *ngIf="feedback.rating>=2">
+                                <img src="/assets/star-gray.svg" width="22px" for="rate-3" *ngIf="feedback.rating<3">
+                                <img src="/assets/star-yellow.svg" width="22px" for="rate-3" *ngIf="feedback.rating>=3">
+                                <img src="/assets/star-gray.svg" width="22px" for="rate-4" *ngIf="feedback.rating<4">
+                                <img src="/assets/star-yellow.svg" width="22px" for="rate-4" *ngIf="feedback.rating>=4">
+                                <img src="/assets/star-gray.svg" width="22px" for="rate-5" *ngIf="feedback.rating<5">
+                                <img src="/assets/star-yellow.svg" width="22px" for="rate-5" *ngIf="feedback.rating>=5">
+                            </div>
+                            <span class="comment">{{feedback?.comments}}</span>
+                        </div> -->
+
+                         <mat-card style="margin-top: 20px; border: none;" fxLayout="column">
+                            <div fxLayoutGap="20px" *ngFor="let feedback of booksArr" style="margin-left: 20px;">
+                                <div>
+                                    <span class="user-feedback"> {{(feedback?.details.fullName)}}</span>
+                                </div>
+                                <!-- <div style="font-size: 28px;color: orange;padding-top: 10px;"> -->
+                                    <!-- <ngb-rating [max]="5" [(rate)]="feedback.rating" [readonly]="true"></ngb-rating> -->
+                                    <!-- <img src="../../../assets/star-gray.svg" width="22px" for="rate-1" *ngIf="feedback.rating<1">
+                                    <img src="../../../assets/star-yellow.svg" width="22px" for="rate-1" *ngIf="feedback.rating>=1">
+                                    <img src="../../../assets/star-gray.svg" width="22px" for="rate-2" *ngIf="feedback.rating<2">
+                                    <img src="../../../assets/star-yellow.svg" width="22px" for="rate-2" *ngIf="feedback.rating>=2">
+                                    <img src="../../../assets/star-gray.svg" width="22px" for="rate-3" *ngIf="feedback.rating<3">
+                                    <img src="../../../assets/star-yellow.svg" width="22px" for="rate-3" *ngIf="feedback.rating>=3">
+                                    <img src="../../../assets/star-gray.svg" width="22px" for="rate-4" *ngIf="feedback.rating<4">
+                                    <img src="../../../assets/star-yellow.svg" width="22px" for="rate-4" *ngIf="feedback.rating>=4">
+                                    <img src="/assets/star-gray.svg" width="22px" for="rate-5" *ngIf="feedback.rating<5">
+                                    <img src="../../../assets/star-yellow.svg" width="22px" for="rate-5" *ngIf="feedback.rating>=5">
+                                </div> -->
+                                <div style="padding-bottom: 15px;">
+                                    <span class="user-comment"> {{feedback?.comments}}</span> <br>
                                 </div>
                             </div>
                         </mat-card>
